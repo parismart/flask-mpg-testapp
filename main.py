@@ -4,9 +4,12 @@ import os
 app = Flask(__name__)
 
 
-@app.route('/')
-def index():
-    return jsonify({"Choo Choo": "Welcome to your Flask app 🚅"})
+@app.route('/', methods=['GET'])
+def home():
+    return """
+    <h1>APP para calcular MPG</h1>
+    APP para testear flask y Railway
+    """
 
 
 @app.route('/api/v1/predictions', methods=['GET'])
